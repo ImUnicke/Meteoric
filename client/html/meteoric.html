@@ -3,12 +3,13 @@
 </head>
 
 <body>
-  <div id="wrap"> 
-    {{> navBar}}
-    <br/><br/>
-    <div id="push"></div>
-  </div>  
-  <div id="footer">
-    {{> chatBar}}
+  {{> navBar}}
+  <div class="row" style="width: 97%; margin: auto;">  
+    <div id="chatDiv" class="col-md-8">
+      {{> chatWindow}}
+    </div>
+    <div id="infoDiv" class="col-md-4">
+      {{> userWindow }}
+    </div>
   </div>
 </body>

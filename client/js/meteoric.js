@@ -1,7 +1,9 @@
+Accounts.ui.config({
+  passwordSignupFields: "USERNAME_ONLY"
+});
+
 if (Meteor.isClient) {
-  //This file is useless!!!!
-  // Whatever keep it there!!
-  // ok then!!!
+  
 }
 
 if (Meteor.isServer) {
