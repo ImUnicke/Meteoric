@@ -1,12 +1,18 @@
 <template name="userWindow">
-  <div class="panel panel-primary" style="height: 250px;">
+  <div class="panel panel-primary" style="height: 255px;">
     <div class="panel-heading">
-      Users in Channel
+      Users
     </div>
     <div class="panel-body">
-      Jon <br/>
-      Phleep <br/>
-      Breet <br/>
+      <table>
+      <tbody>
+              {{#each channelUsers}}
+              <tr>
+                <td>{{name}}</td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
     </div>
   </div>
 </template>

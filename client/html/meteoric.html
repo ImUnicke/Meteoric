@@ -3,13 +3,23 @@
 </head>
 
 <body>
-  {{> navBar}}
+  <div id="wrap">
+    <div id="main" class="caontainer clear-top">
+    {{> navBar}}
   <div class="row" style="width: 97%; margin: auto;">  
     <div id="chatDiv" class="col-md-8">
       {{> chatWindow}}
     </div>
     <div id="infoDiv" class="col-md-4">
+      <div style="margin-bottom: 22px;">
+        {{> channelButton }}
+      </div>
+      {{> savedChannels }}
+      
       {{> userWindow }}
     </div>
   </div>
+    </div>
+  </div>
+  <footer class="footer navbar-default"></footer>
 </body>

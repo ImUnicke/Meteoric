@@ -1,11 +1,29 @@
 /* CSS declarations go here */
 /* Rounded Corner */
-html,
-body {
+html, body {
   height: 100%;
-  /* The html and body elements cannot have any padding or margin. */
 }
 
-.navbar-default, .panel-default > .panel-heading {
-  /*background-color: #F0BA5D !important;*/
+#wrap {
+  min-height: 100%;
+}
+
+#main {
+  overflow:auto;
+  padding-bottom:75px; /* this needs to be bigger than footer height*/
+}
+
+.footer {
+  position: relative;
+  margin-top: -75px; /* negative value of footer height */
+  height: 75px;
+  clear:both;
+  padding-top:20px;
+  border-radius: 5px 5px 0px 0px;
+}
+
+#channelModal .modal-body 
+{
+max-height: 400px;
+overflow-y: scroll;
 }
