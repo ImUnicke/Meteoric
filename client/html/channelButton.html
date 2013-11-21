@@ -12,6 +12,10 @@
         $(this).addClass("success");
       }
     );
+    function showTextBox(){
+        if ($('select-#newchannel-security').val() == 'newchannel-security-private') {
+                   $('#input-newchannel-password').css({'visibility':'visible'});
+    }
   </script>
   <input type="button" style="width: 100%;" 
          class="btn btn-primary" value="Browse Channels" 
@@ -42,6 +46,29 @@
                 <td>{{security}}</td>
               </tr>
               {{/each}}
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-body" id="new_channel_section" style="display:block;">
+          <table class="table table-striped table-hover table-condensed selectable">
+            <thead>
+              <tr>
+                <th><strong>Channel Name</strong></th>
+                <th><strong>Description</strong></th>
+                <th><strong>Type</strong></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="clickable">
+                <form id="inputForm" class="form input-form input-sm" role="form">
+                <td><input id="input-newchannel-name" type="text" class="form-control" name="newchannel-name"/></td>
+                <td><input id="input-newchannel-description" type="text" class="form-control" name="newchannel-description"/></td>
+                <td><select id="select-newchannel-security" class="form-control" name="newchannel-security" onchange="ShowHide();">
+                  <option value="newchannel-security-public">Public</option>
+                  <option value="newchannel-security-private">Private</option></select></td>
+                <td><input id="input-newchannel-password" type="password" class="form-control" name="newchannel-password" style="visibility:collapse;"/></td>
+                </form>
+              </tr>
             </tbody>
           </table>
         </div>

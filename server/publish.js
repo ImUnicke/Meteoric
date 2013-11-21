@@ -3,13 +3,13 @@
 // Channels -- {name: String,
 //              description: String}
 Meteor.publish('channels', function () {
-  return Channels.find();
+  return Channels.find({},{fields: {name: 1, description: 1, security: 1}});
 });
 
 // Publish all items for requested current_channel_id.
 Meteor.publish('channelUsers', function (current_channel_id) {
   check(current_channel_id, String);
-  return Channels.find({_id: current_channel_id});
+  return Channels.find({_id: current_channel_id}, {fields: {userList: 1}});
 });
 
 // Chat -- {text: String,

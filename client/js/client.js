@@ -3,12 +3,17 @@ Accounts.ui.config({
 });
 
 Meteor.subscribe("channels");
-Meteor.subscribe("channelUsers");
+Session.set("current_channel", "TqABQtva7WHMtnGYZ");
+
+Meteor.autorun(function() {
+   Meteor.subscribe("channelUsers", Session.get("current_channel"));
+});
 
 Template.channelButton.channels = function () {
   return Channels.find({});
 }
 
-Template.userWindow.channelUsers = function () {
-  return ChannelUsers.find({});
+Template.userWindow.userQuery = function() {
+  return Channels.find({}, {fields: {userList: 1}});
 }
+

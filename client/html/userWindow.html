@@ -6,10 +6,12 @@
     <div class="panel-body">
       <table>
       <tbody>
-              {{#each channelUsers}}
+              {{#each userQuery}}
+              {{#each userList}}
               <tr>
-                <td>{{name}}</td>
+                <td>{{.}}</td>
               </tr>
+              {{/each}}
               {{/each}}
             </tbody>
           </table>

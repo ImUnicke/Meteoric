@@ -1,8 +1,10 @@
 Meteor.startup(function () {
   //if (Channels.find().count() === 0) {
   if (Channels.find().count() === 0) {
-    console.log(Channels.find().count());
-    var tempchanneldata = [
+    var timestamp = (new Date()).getTime();
+    Channels.insert({name: "Testing", created: timestamp, description: "Just testing", security: "Public", password: null, userList: ["csob","ImUnicke"]});
+    Channels.insert({name: "Testing2", created: timestamp, description: "Just testing", security: "Public", password: null, userList: ["phleep","breet"]});
+    /*var tempchanneldata = [
                             {name: "Peanut Gallery",
                              contents: [
                                ["Description for the channel", "Public", null]
@@ -29,8 +31,6 @@ Meteor.startup(function () {
                          description: info[0],
                          security: info[1],
                          password: info[2]});
-    }
-  }
+    }*/
+}
 });
-
-var testFunc = function() {return "testDoneBro"}
