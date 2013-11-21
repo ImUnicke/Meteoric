@@ -6,13 +6,10 @@ Meteor.publish('channels', function () {
   return Channels.find();
 });
 
-// ChannelUsers -- {text: String,
-//           role: String,
-//           current_channel_id: String}
 // Publish all items for requested current_channel_id.
-Meteor.publish('channelUsers', function () {
-  //check(current_channel_id, String);
-  return ChannelUsers.find({current_channel_id: "PeanutGallery"});
+Meteor.publish('channelUsers', function (current_channel_id) {
+  check(current_channel_id, String);
+  return Channels.find({_id: current_channel_id});
 });
 
 // Chat -- {text: String,
